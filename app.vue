@@ -7,7 +7,8 @@
       喵立翰 Miao Li-Han
     </h1>
 
-    <nav
+    <!-- TODO: 取消隱藏 -->
+    <!-- <nav
       class="fixed w-full h17 left-0 bottom-0 bg-white/90 flex justify-evenly gap-x2 px2 [&>a]:(flex-grow w0 flex flex-col justify-center items-center gap1 text-xs text-gray-700) 2xl:(static w-auto h-auto bg-transparant gap-x-8 [&>a]:w-auto [&>a]:text-4.5 [&>a]:leading-11 [&_svg]:!hidden)"
     >
       <a href="">
@@ -30,7 +31,7 @@
         <Icon name="MailboxIcon" size="24px"></Icon>
         服務信箱
       </a>
-    </nav>
+    </nav> -->
 
     <!-- only desktop -->
     <ul class="gap-x-4 [&_a]:(block p0.5) hidden md:flex">
@@ -46,12 +47,12 @@
     </ul>
   </header>
 
-  <main class="mt4 bg-#F7ECE1">
+  <main class="mt4">
     <!-- 主視覺 -->
     <div class="bg-white">
       <div class="container pt8 flex flex-col items-center gap-y4 relative">
         <p
-          class="font-['Mantou_Sans'] text-13 leading-[1.05] tracking-0.5 text-center bg-clip-text text-transparent bg-gradient-to-r from-#E5793B to-#FF4185 [&>span]:block 2xl:(text-24 [&>span]:inline-block)"
+          class="gradient font-['Mantou_Sans'] text-13 leading-[1.05] tracking-0.5 text-center [&>span]:block 2xl:(text-24 [&>span]:inline-block)"
         >
           <span>台灣的明天</span>
           <span class="2xl:ml4">喵先鋪路</span>
@@ -103,7 +104,36 @@
       </li>
     </ul>
 
-    <div class="container">content</div>
+    <!-- 候選人主張 -->
+    <section class="bg-#F7ECE1 py16 2xl:py26">
+      <div class="container">
+        <div
+          class="bg-white rounded-6 overflow-hidden flex flex-col items-center 2xl:(flex-row gap-x-6 items-stretch)"
+        >
+          <div class="2xl:(w0 flex-grow)">
+            <div class="py10 px6 2xl:(py16 px10)">
+              <h2 class="gradient" data-tag="ADVOCATE">候選人主張</h2>
+              <p class="text-gray-700 text-6 font-700 my4 2xl:text-7">
+                我堅信 ! 藉由推動更完善的<strong class="text-#DA7D4A">貓咪福利</strong
+                >和相關政策，更是間接地投資於<strong class="text-#DA7D4A">台灣的未來</strong>。
+              </p>
+              <p class="text-gray-700 2xl:text-4.5">
+                畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的
+                GDP 經濟帶來巨大效益。<br />因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
+              </p>
+            </div>
+          </div>
+          <div class="2xl:(w0 flex-grow)">
+            <img
+              src="@/assets/images/advocate.png"
+              srcset="@/assets/images/advocate@2x.png 2x"
+              class="2xl:(h-full object-cover)"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="container">footer</footer>
@@ -117,6 +147,12 @@
 }
 body {
   @apply font-sans pt17 md:pt20.75 bg-#FDFCFB;
+}
+h2 {
+  @apply flex flex-col items-center font-['Mantou_Sans'] text-13 2xl:text-16 before:(content-[attr(data-tag)] font-sans text-base font-700 text-white px3 py2 bg-gray-700 rounded-2);
+}
+.gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-#E5793B to-#FF4185;
 }
 .marquee {
   animation: marquee 10s linear infinite;
