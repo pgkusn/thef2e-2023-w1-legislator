@@ -107,9 +107,7 @@
     <!-- 候選人主張 -->
     <section class="bg-#F7ECE1 py16 2xl:py26">
       <div class="container">
-        <div
-          class="bg-white rounded-6 overflow-hidden flex flex-col items-center 2xl:(flex-row gap-x-6 items-stretch)"
-        >
+        <div class="bg-white rounded-6 overflow-hidden flex flex-col 2xl:(flex-row gap-x-6)">
           <div class="2xl:(w0 flex-grow)">
             <div class="py10 px6 2xl:(py16 px10)">
               <h2 class="gradient" data-tag="ADVOCATE">候選人主張</h2>
@@ -130,6 +128,88 @@
               class="2xl:(h-full object-cover)"
               alt=""
             />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新活動 -->
+    <section class="py16 2xl:py26">
+      <div class="container">
+        <h2 class="gradient mb10 2xl:16" data-tag="LATEST EVENTS">最新活動</h2>
+        <div class="flex flex-col gap-y-6 2xl:(flex-row gap-x-6)">
+          <div class="2xl:(w0 flex-grow)">
+            <img
+              src="@/assets/images/events_1.png"
+              srcset="@/assets/images/events_1@2x.png 2x"
+              alt=""
+            />
+            <div class="mt4">
+              <p class="text-3.5 text-gray-500">2023/12/26</p>
+              <p class="text-5 font-700 text-gray-700 my2">參與台北寵物論壇，爭取貓咪友善環境</p>
+              <p class="text-gray-700">
+                炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
+                VIP 休憩空間。
+              </p>
+            </div>
+          </div>
+          <div class="2xl:(w0 flex-grow)">
+            <ul>
+              <li class="flex items-start gap-x-4">
+                <img
+                  src="@/assets/images/events_2_thumb.png"
+                  srcset="@/assets/images/events_2_thumb@2x.png 2x"
+                  class="w27.25 h28 object-cover rounded-2 2xl:(w-auto h-auto)"
+                  alt=""
+                />
+                <div>
+                  <p class="text-3.5 text-gray-500">2023/12/24</p>
+                  <p class="font-700 text-gray-700 my2">
+                    掃街模式開啟！帶著你的貓耳，來和我一起走！
+                  </p>
+                  <p class="text-3.5 text-gray-700 2xl:text-base">
+                    街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-x-4 mt6">
+                <img
+                  src="@/assets/images/events_3_thumb.png"
+                  srcset="@/assets/images/events_3_thumb@2x.png 2x"
+                  class="w27.25 h28 object-cover rounded-2 2xl:(w-auto h-auto)"
+                  alt=""
+                />
+                <div>
+                  <p class="text-3.5 text-gray-500">2023/12/20</p>
+                  <p class="font-700 text-gray-700 my2">收容所模特兒大比拼！</p>
+                  <p class="text-3.5 text-gray-700 2xl:text-base">
+                    今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-x-4 mt6">
+                <img
+                  src="@/assets/images/events_1_thumb.png"
+                  srcset="@/assets/images/events_1_thumb@2x.png 2x"
+                  class="w27.25 h28 object-cover rounded-2 2xl:(w-auto h-auto)"
+                  alt=""
+                />
+                <div>
+                  <p class="text-3.5 text-gray-500">2023/12/26</p>
+                  <p class="font-700 text-gray-700 my2">參與台北寵物論壇，爭取貓咪友善環境</p>
+                  <p class="text-3.5 text-gray-700 2xl:text-base">
+                    炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <a
+              href=""
+              class="inline-flex items-center gap-x-2 mt6 px6 py4 bg-gray-100 text-gray-700 font-700 rounded-full"
+            >
+              查看更多
+              <Icon name="ArrowForwardIcon" size="32px" />
+            </a>
           </div>
         </div>
       </div>
