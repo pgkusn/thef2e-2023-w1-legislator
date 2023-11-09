@@ -7,7 +7,7 @@
       喵立翰 Miao Li-Han
     </h1>
 
-    <!-- TODO: 取消隱藏 -->
+    <!-- TODO: 取消隱藏、網頁底部留白 -->
     <!-- <nav
       class="fixed w-full h17 left-0 bottom-0 bg-white/90 flex justify-evenly gap-x2 px2 [&>a]:(flex-grow w0 flex flex-col justify-center items-center gap1 text-xs text-gray-700) 2xl:(static w-auto h-auto bg-transparant gap-x-8 [&>a]:w-auto [&>a]:text-4.5 [&>a]:leading-11 [&_svg]:!hidden)"
     >
@@ -208,7 +208,7 @@
               class="inline-flex items-center gap-x-2 mt6 px6 py4 bg-gray-100 text-gray-700 font-700 rounded-full"
             >
               查看更多
-              <Icon name="ArrowForwardIcon" size="32px" />
+              <Icon name="ArrowForwardIcon" size="20px" />
             </a>
           </div>
         </div>
@@ -249,6 +249,62 @@
             />
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- 贊助 & 信箱 -->
+    <section class="py16 md:py15 2xl:py26 bg-#FDFCFB">
+      <div class="container flex flex-col gap-x6 gap-y6 md:flex-row">
+        <div class="md:(w-0 flex-grow)">
+          <aside
+            class="max-w85.75 px6 py10 rounded-8 bg-primary mx-auto md:h-full 2xl:(max-w-none px24 py24)"
+          >
+            <h3 class="font-['Mantou_Sans'] text-10 text-white 2xl:text-13">小額支持喵喵</h3>
+            <p class="text-5 mt4 mb6 text-white 2xl:h15">
+              您的小筆捐款，是每隻毛孩未來的大大動力！
+            </p>
+            <div class="flex justify-between items-center">
+              <a
+                href=""
+                class="inline-flex items-center gap-x-2 px6 py4 bg-white text-gray-700 font-700 rounded-full"
+              >
+                小額捐款
+                <Icon name="ArrowForwardIcon" size="20px" />
+              </a>
+              <img
+                src="@/assets/images/donate.png"
+                srcset="@/assets/images/donate@2x.png 2x"
+                class="w32 h32 object-contain 2xl:(w56 h-60)"
+                alt=""
+              />
+            </div>
+          </aside>
+        </div>
+        <div class="md:(w-0 flex-grow)">
+          <aside
+            class="max-w85.75 px6 py10 rounded-8 bg-gray-700 mx-auto md:h-full 2xl:(max-w-none px24 py24)"
+          >
+            <h3 class="font-['Mantou_Sans'] text-10 text-white 2xl:text-13">民眾服務信箱</h3>
+            <p class="text-5 mt4 mb6 text-white">
+              親愛的鄉親，每一位市民的意見都是我們社區前進的原動力
+            </p>
+            <div class="flex justify-between items-center">
+              <a
+                href=""
+                class="inline-flex items-center gap-x-2 px6 py4 bg-white text-gray-700 font-700 rounded-full"
+              >
+                填寫表單
+                <Icon name="ArrowForwardIcon" size="20px" />
+              </a>
+              <img
+                src="@/assets/images/mail.png"
+                srcset="@/assets/images/mail@2x.png 2x"
+                class="w32 h32 object-contain 2xl:(w64 h-60)"
+                alt=""
+              />
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   </main>
