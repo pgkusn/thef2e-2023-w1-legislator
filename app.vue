@@ -105,12 +105,12 @@
     </ul>
 
     <!-- 候選人主張 -->
-    <section class="bg-#F7ECE1 py16 2xl:py26">
+    <section class="py16 2xl:py26 bg-#F7ECE1">
       <div class="container">
         <div class="bg-white rounded-6 overflow-hidden flex flex-col 2xl:(flex-row gap-x-6)">
           <div class="2xl:(w0 flex-grow)">
             <div class="py10 px6 2xl:(py16 px10)">
-              <h2 class="gradient" data-tag="ADVOCATE">候選人主張</h2>
+              <h2 class="subtitle gradient" data-tag="ADVOCATE">候選人主張</h2>
               <p class="text-gray-700 text-6 font-700 my4 2xl:text-7">
                 我堅信 ! 藉由推動更完善的<strong class="text-#DA7D4A">貓咪福利</strong
                 >和相關政策，更是間接地投資於<strong class="text-#DA7D4A">台灣的未來</strong>。
@@ -136,7 +136,7 @@
     <!-- 最新活動 -->
     <section class="py16 2xl:py26">
       <div class="container">
-        <h2 class="gradient mb10 2xl:16" data-tag="LATEST EVENTS">最新活動</h2>
+        <h2 class="subtitle gradient mb10 2xl:16" data-tag="LATEST EVENTS">最新活動</h2>
         <div class="flex flex-col gap-y-6 2xl:(flex-row gap-x-6)">
           <div class="2xl:(w0 flex-grow)">
             <img
@@ -214,6 +214,43 @@
         </div>
       </div>
     </section>
+
+    <!-- 政策議題 -->
+    <section class="py16 2xl:py26 bg-#FDFCFB">
+      <div class="container">
+        <h2 class="subtitle gradient mb10 2xl:16" data-tag="POLICY ISSUES">政策議題</h2>
+        <ul class="grid justify-items-center gap-x-6 gap-y-16 md:grid-cols-2 2xl:grid-cols-3">
+          <li>
+            <p class="text-6 font-700 text-gray-700 ml4 mb4">
+              為毛孩子謀福利！<br />推動寵物醫療保障方案
+            </p>
+            <img
+              src="@/assets/images/policy_1.png"
+              srcset="@/assets/images/policy_1@2x.png 2x"
+              alt=""
+            />
+          </li>
+          <li>
+            <p class="text-6 font-700 text-gray-700 ml4 mb4">
+              打造休閒天堂！<br />推廣寵物休閒與娛樂場所
+            </p>
+            <img
+              src="@/assets/images/policy_2.png"
+              srcset="@/assets/images/policy_2@2x.png 2x"
+              alt=""
+            />
+          </li>
+          <li>
+            <p class="text-6 font-700 text-gray-700 ml4 mb4">推廣寵物飼養教育<br />讓愛更加專業</p>
+            <img
+              src="@/assets/images/policy_3.png"
+              srcset="@/assets/images/policy_3@2x.png 2x"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="container">footer</footer>
@@ -228,7 +265,7 @@
 body {
   @apply font-sans pt17 md:pt20.75 bg-#FDFCFB;
 }
-h2 {
+.subtitle {
   @apply flex flex-col items-center font-['Mantou_Sans'] text-13 2xl:text-16 before:(content-[attr(data-tag)] font-sans text-base font-700 text-white px3 py2 bg-gray-700 rounded-2);
 }
 .gradient {
