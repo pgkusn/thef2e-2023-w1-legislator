@@ -7,8 +7,7 @@
       喵立翰 Miao Li-Han
     </h1>
 
-    <!-- TODO: 取消隱藏、網頁底部留白 -->
-    <!-- <nav
+    <nav
       class="fixed w-full h17 left-0 bottom-0 bg-white/90 flex justify-evenly gap-x2 px2 [&>a]:(flex-grow w0 flex flex-col justify-center items-center gap1 text-xs text-gray-700) 2xl:(static w-auto h-auto bg-transparant gap-x-8 [&>a]:w-auto [&>a]:text-4.5 [&>a]:leading-11 [&_svg]:!hidden)"
     >
       <a href="">
@@ -31,7 +30,7 @@
         <Icon name="MailboxIcon" size="24px"></Icon>
         服務信箱
       </a>
-    </nav> -->
+    </nav>
 
     <!-- only desktop -->
     <ul class="gap-x-4 [&_a]:(block p0.5) hidden md:flex">
@@ -52,7 +51,7 @@
     <div class="bg-white">
       <div class="container pt8 flex flex-col items-center gap-y4 relative">
         <p
-          class="gradient font-['Mantou_Sans'] text-13 leading-[1.05] tracking-0.5 text-center [&>span]:block 2xl:(text-24 [&>span]:inline-block)"
+          class="text-gradient font-['Mantou_Sans'] text-13 leading-[1.05] tracking-0.5 text-center [&>span]:block 2xl:(text-24 [&>span]:inline-block)"
         >
           <span>台灣的明天</span>
           <span class="2xl:ml4">喵先鋪路</span>
@@ -110,7 +109,7 @@
         <div class="bg-white rounded-6 overflow-hidden flex flex-col 2xl:(flex-row gap-x-6)">
           <div class="2xl:(w0 flex-grow)">
             <div class="py10 px6 2xl:(py16 px10)">
-              <h2 class="subtitle gradient" data-tag="ADVOCATE">候選人主張</h2>
+              <h2 class="subtitle text-gradient" data-tag="ADVOCATE">候選人主張</h2>
               <p class="text-gray-700 text-6 font-700 my4 2xl:text-7">
                 我堅信 ! 藉由推動更完善的<strong class="text-#DA7D4A">貓咪福利</strong
                 >和相關政策，更是間接地投資於<strong class="text-#DA7D4A">台灣的未來</strong>。
@@ -136,7 +135,7 @@
     <!-- 最新活動 -->
     <section class="py16 2xl:py26">
       <div class="container">
-        <h2 class="subtitle gradient mb10 2xl:16" data-tag="LATEST EVENTS">最新活動</h2>
+        <h2 class="subtitle text-gradient mb10 2xl:16" data-tag="LATEST EVENTS">最新活動</h2>
         <div class="flex flex-col gap-y-6 2xl:(flex-row gap-x-6)">
           <div class="2xl:(w0 flex-grow)">
             <img
@@ -218,7 +217,7 @@
     <!-- 政策議題 -->
     <section class="py16 2xl:py26 bg-#FDFCFB">
       <div class="container">
-        <h2 class="subtitle gradient mb10 2xl:16" data-tag="POLICY ISSUES">政策議題</h2>
+        <h2 class="subtitle text-gradient mb10 2xl:16" data-tag="POLICY ISSUES">政策議題</h2>
         <ul class="grid justify-items-center gap-x-6 gap-y-16 md:grid-cols-2 2xl:grid-cols-3">
           <li>
             <p class="text-6 font-700 text-gray-700 ml4 mb4">
@@ -254,7 +253,7 @@
 
     <!-- 贊助 & 信箱 -->
     <section class="py16 md:py15 2xl:py26 bg-#FDFCFB">
-      <div class="container flex flex-col gap-x6 gap-y6 md:flex-row">
+      <div class="container flex flex-col gap-6 md:flex-row">
         <div class="md:(w-0 flex-grow)">
           <aside
             class="max-w85.75 px6 py10 rounded-8 bg-primary mx-auto md:h-full 2xl:(max-w-none px24 py24)"
@@ -307,9 +306,55 @@
         </div>
       </div>
     </section>
+
+    <div class="py26 text-center">
+      <p
+        class="text-gradient font-['Mantou_Sans'] text-13 leading-[1.05] tracking-0.5 text-center [&>span]:block 2xl:(text-16 [&>span]:inline-block)"
+      >
+        <span>台灣的明天</span>
+        <span class="2xl:ml4">喵先鋪路</span>
+      </p>
+      <p
+        class="inline-flex items-center gap-x4 px4 py3 mt4 bg-white/90 rounded-4 shadow-[0_4px_12px_0_#A3B4CB33] text-6 font-700 text-primary before:(content-[attr(data-num)] text-6 font-900 text-white bg-gradient w10 h10 rounded-full flex justify-center items-center bg-gradient-to-r from-#E5793B to-#FF4185) 2xl:(text-10 before:(text-8 w12.5 h12.5))"
+        data-num="3"
+      >
+        喵立翰 Miao LiHan
+      </p>
+    </div>
   </main>
 
-  <footer class="container">footer</footer>
+  <footer class="pt16 pb33 2xl:pb16 bg-#F7ECE1">
+    <div class="container flex flex-col gap-x4 gap-y6 2xl:flex-row">
+      <div class="2xl:(w-0 flex-grow)">
+        <p
+          class="inline-flex justify-center items-center gap-x2 text-7 font-700 text-primary before:(content-[attr(data-num)] text-5 font-900 text-white bg-gradient w8 h8 rounded-full flex justify-center items-center bg-gradient-to-r from-#E5793B to-#FF4185)"
+          data-num="3"
+        >
+          喵立翰 Miao LiHan
+        </p>
+        <ul class="flex gap-x-2 my4 [&_a]:(block p2.5 bg-white rounded-full)">
+          <li>
+            <a href=""><Icon name="FBIcon" size="28px" /></a>
+          </li>
+          <li>
+            <a href=""><Icon name="IGIcon" size="28px" /></a>
+          </li>
+          <li>
+            <a href=""><Icon name="YTIcon" size="28px" /></a>
+          </li>
+        </ul>
+        <p class="text-3.5">© 2023 喵立翰 Miao Li-Han 版權所有</p>
+      </div>
+      <div class="2xl:(w-0 flex-grow)">
+        <p class="text-6 font-700">競選總部</p>
+        <ul class="mt4">
+          <li>辦公室地址：喵星區，毛茸茸大道88號，喵喵大樓3樓</li>
+          <li>電話：(02) 888-5678</li>
+          <li>電子郵件地址：meowoffice@linmeow.tw</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <style>
@@ -324,7 +369,7 @@ body {
 .subtitle {
   @apply flex flex-col items-center font-['Mantou_Sans'] text-13 2xl:text-16 before:(content-[attr(data-tag)] font-sans text-base font-700 text-white px3 py2 bg-gray-700 rounded-2);
 }
-.gradient {
+.text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-#E5793B to-#FF4185;
 }
 .marquee {
