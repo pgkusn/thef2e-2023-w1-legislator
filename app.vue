@@ -1,6 +1,16 @@
+<script setup>
+const { $AOS } = useNuxtApp()
+
+onMounted(() => {
+  $AOS.init()
+})
+</script>
+
 <template>
+  <div class="h4 hidden md:block"></div>
+
   <header
-    class="fixed top-0 inset-x-0 z1 pl4 bg-white/85 py3 md:(top-4 inset-x-4 flex justify-between items-center px6 py3 rounded-4)"
+    class="pl4 bg-white/85 py3 md:(sticky top-0 z1 mx-4 flex justify-between items-center px6 py3 rounded-4)"
   >
     <h1 class="text-5 font-700 text-primary flex items-center gap-x2 md:text-6">
       <Icon name="LogoIcon" class="w8.5 h7 md:(w13 h10.75)" />
@@ -8,26 +18,26 @@
     </h1>
 
     <nav
-      class="fixed w-full h17 left-0 bottom-0 bg-white/90 flex justify-evenly gap-x2 px2 [&>a]:(flex-grow w0 flex flex-col justify-center items-center gap1 text-xs text-gray-700) 2xl:(static w-auto h-auto bg-transparant gap-x-8 [&>a]:w-auto [&>a]:text-4.5 [&>a]:leading-11 [&_svg]:!hidden)"
+      class="fixed z1 w-full h17 left-0 bottom-0 bg-white/90 flex justify-evenly gap-x2 px2 [&>a]:(flex-grow w0 flex flex-col justify-center items-center gap1 text-xs text-gray-700) 2xl:(static w-auto h-auto bg-transparent gap-x-8 [&>a]:w-auto [&>a]:text-4.5 [&>a]:leading-11 [&_svg]:!hidden)"
     >
-      <a href="">
+      <a href="#advocate">
         <Icon name="UserIcon" size="24px"></Icon>
         候選人主張
       </a>
-      <a href="">
+      <a href="#events">
         <Icon name="EventsIcon" size="24px"></Icon>
         最新活動
       </a>
-      <a href="">
+      <a href="#policy">
         <Icon name="PolicyIcon" size="24px"></Icon>
         政策議題
       </a>
-      <a href="">
+      <a href="#other">
         <Icon name="MoneyIcon" size="24px"></Icon>
         小額捐款
       </a>
-      <a href="">
-        <Icon name="MailboxIcon" size="24px"></Icon>
+      <a href="#other">
+        <Icon name="MailIcon" size="24px"></Icon>
         服務信箱
       </a>
     </nav>
@@ -35,39 +45,44 @@
     <!-- only desktop -->
     <ul class="gap-x-4 [&_a]:(block p0.5) hidden md:flex">
       <li>
-        <a href=""><Icon name="FBIcon" size="28px" /></a>
+        <a href="javascript:;"><Icon name="FBIcon" size="28px" /></a>
       </li>
       <li>
-        <a href=""><Icon name="IGIcon" size="28px" /></a>
+        <a href="javascript:;"><Icon name="IGIcon" size="28px" /></a>
       </li>
       <li>
-        <a href=""><Icon name="YTIcon" size="28px" /></a>
+        <a href="javascript:;"><Icon name="YTIcon" size="28px" /></a>
       </li>
     </ul>
   </header>
 
-  <main class="mt4">
+  <main class="mt4 overflow-x-hidden">
     <!-- 主視覺 -->
     <div class="bg-white">
-      <div class="container pt8 flex flex-col items-center gap-y4 relative">
+      <div class="container pt8 flex flex-col items-center gap-y4 relative 2xl:pt24">
         <p
           class="text-gradient font-['Mantou_Sans'] text-13 leading-[1.05] tracking-0.5 text-center [&>span]:block 2xl:(text-24 [&>span]:inline-block)"
+          data-aos="fade"
         >
           <span>台灣的明天</span>
           <span class="2xl:ml4">喵先鋪路</span>
         </p>
-        <div class="flex flex-col gap-y-4 items-center md:flex-row 2xl:gap-x-4">
+        <div
+          class="flex flex-col gap-y-4 items-center md:flex-row 2xl:gap-x-4"
+          data-aos="fade"
+          data-aos-delay="500"
+        >
           <p class="text-5 font-700 text-white px4 py3 bg-gray-700 rounded-4 2xl:text-7">
             2024 立委參選人
           </p>
           <p
-            class="flex items-center gap-x4 px4 py3 bg-white/90 rounded-4 shadow-[0_4px_12px_0_#A3B4CB33] text-7 font-700 text-primary before:(content-[attr(data-num)] text-6.25 font-900 text-white bg-gradient w10 h10 rounded-full flex justify-center items-center bg-gradient-to-r from-#E5793B to-#FF4185) 2xl:(text-10 before:(text-8 w12.5 h12.5))"
+            class="flex items-center gap-x4 px4 py3 bg-white/90 rounded-4 shadow-[0_4px_12px_0_#A3B4CB33] text-7 font-700 text-primary tracking-tight before:(content-[attr(data-num)] text-6.25 font-900 text-white bg-gradient w10 h10 rounded-full flex justify-center items-center bg-gradient-to-r from-#E5793B to-#FF4185) 2xl:(text-10 before:(text-8 w12.5 h12.5))"
             data-num="3"
           >
             喵立翰 Miao LiHan
           </p>
         </div>
-        <div class="max-w-85.75 2xl:max-w-none">
+        <div class="max-w-85.75 2xl:max-w-none" data-aos="fade" data-aos-delay="1000">
           <img
             src="@/assets/images/hero.png"
             srcset="@/assets/images/hero.png, @/assets/images/hero@2x.png 2x"
@@ -79,13 +94,13 @@
           class="flex justify-center gap-x-4 absolute bottom-3 bg-white rounded-3 px10 py2 shadow-[0_1px_4px_0_#0000001A] [&_a]:(block p0.5) md:hidden"
         >
           <li>
-            <a href=""><Icon name="FBIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="FBIcon" size="28px" /></a>
           </li>
           <li>
-            <a href=""><Icon name="IGIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="IGIcon" size="28px" /></a>
           </li>
           <li>
-            <a href=""><Icon name="YTIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="YTIcon" size="28px" /></a>
           </li>
         </ul>
       </div>
@@ -104,7 +119,7 @@
     </ul>
 
     <!-- 候選人主張 -->
-    <section class="py16 2xl:py26 bg-#F7ECE1">
+    <section id="advocate" class="py16 2xl:py26 bg-#F7ECE1" data-aos="fade-up">
       <div class="container">
         <div class="bg-white rounded-6 overflow-hidden flex flex-col 2xl:(flex-row gap-x-6)">
           <div class="2xl:(w0 flex-grow)">
@@ -133,10 +148,12 @@
     </section>
 
     <!-- 最新活動 -->
-    <section class="py16 2xl:py26">
+    <section id="events" class="py16 2xl:py26">
       <div class="container">
-        <h2 class="subtitle text-gradient mb10 2xl:16" data-tag="LATEST EVENTS">最新活動</h2>
-        <div class="flex flex-col gap-y-6 2xl:(flex-row gap-x-6)">
+        <h2 class="subtitle text-gradient mb10 2xl:16" data-tag="LATEST EVENTS" data-aos="fade">
+          最新活動
+        </h2>
+        <div class="flex flex-col gap-y-6 2xl:(flex-row gap-x-6)" data-aos="fade">
           <div class="2xl:(w0 flex-grow)">
             <img
               src="@/assets/images/events_1.png"
@@ -203,7 +220,7 @@
               </li>
             </ul>
             <a
-              href=""
+              href="javascript:;"
               class="inline-flex items-center gap-x-2 mt6 px6 py4 bg-gray-100 text-gray-700 font-700 rounded-full"
             >
               查看更多
@@ -215,10 +232,19 @@
     </section>
 
     <!-- 政策議題 -->
-    <section class="py16 2xl:py26 bg-#FDFCFB">
+    <section id="policy" class="py16 2xl:py26 bg-#FDFCFB">
       <div class="container">
-        <h2 class="subtitle text-gradient mb10 2xl:16" data-tag="POLICY ISSUES">政策議題</h2>
-        <ul class="grid justify-items-center gap-x-6 gap-y-16 md:grid-cols-2 2xl:grid-cols-3">
+        <h2
+          class="subtitle text-gradient mb10 2xl:16"
+          data-tag="POLICY ISSUES"
+          data-aos="fade-left"
+        >
+          政策議題
+        </h2>
+        <ul
+          class="grid justify-items-center gap-x-6 gap-y-16 md:grid-cols-2 2xl:grid-cols-3"
+          data-aos="fade"
+        >
           <li>
             <p class="text-6 font-700 text-gray-700 ml4 mb4">
               為毛孩子謀福利！<br />推動寵物醫療保障方案
@@ -252,7 +278,7 @@
     </section>
 
     <!-- 贊助 & 信箱 -->
-    <section class="py16 md:py15 2xl:py26 bg-#FDFCFB">
+    <section id="other" class="py16 md:py15 2xl:py26 bg-#FDFCFB" data-aos="fade-left">
       <div class="container flex flex-col gap-6 md:flex-row">
         <div class="md:(w-0 flex-grow)">
           <aside
@@ -264,7 +290,7 @@
             </p>
             <div class="flex justify-between items-center">
               <a
-                href=""
+                href="javascript:;"
                 class="inline-flex items-center gap-x-2 px6 py4 bg-white text-gray-700 font-700 rounded-full"
               >
                 小額捐款
@@ -289,7 +315,7 @@
             </p>
             <div class="flex justify-between items-center">
               <a
-                href=""
+                href="javascript:;"
                 class="inline-flex items-center gap-x-2 px6 py4 bg-white text-gray-700 font-700 rounded-full"
               >
                 填寫表單
@@ -307,7 +333,7 @@
       </div>
     </section>
 
-    <div class="py26 text-center">
+    <div class="py26 text-center" data-aos="zoom-in">
       <p
         class="text-gradient font-['Mantou_Sans'] text-13 leading-[1.05] tracking-0.5 text-center [&>span]:block 2xl:(text-16 [&>span]:inline-block)"
       >
@@ -334,13 +360,13 @@
         </p>
         <ul class="flex gap-x-2 my4 [&_a]:(block p2.5 bg-white rounded-full)">
           <li>
-            <a href=""><Icon name="FBIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="FBIcon" size="28px" /></a>
           </li>
           <li>
-            <a href=""><Icon name="IGIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="IGIcon" size="28px" /></a>
           </li>
           <li>
-            <a href=""><Icon name="YTIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="YTIcon" size="28px" /></a>
           </li>
         </ul>
         <p class="text-3.5">© 2023 喵立翰 Miao Li-Han 版權所有</p>
@@ -363,8 +389,11 @@
   font-weight: 400;
   src: local('Mantou Sans'), url(@/assets/MantouSans-Regular.ttf) format('truetype');
 }
+html {
+  @apply scroll-smooth;
+}
 body {
-  @apply font-sans pt17 md:pt20.75 bg-#FDFCFB;
+  @apply font-sans bg-#FDFCFB;
 }
 .subtitle {
   @apply flex flex-col items-center font-['Mantou_Sans'] text-13 2xl:text-16 before:(content-[attr(data-tag)] font-sans text-base font-700 text-white px3 py2 bg-gray-700 rounded-2);
