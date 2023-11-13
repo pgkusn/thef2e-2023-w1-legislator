@@ -1,4 +1,11 @@
 <script setup>
+useSeoMeta({
+  title: '喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路',
+  ogTitle: '喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路',
+  ogUrl: 'https://thef2e-2023-w1-legislator.vercel.app/',
+  ogImage: 'https://thef2e-2023-w1-legislator.vercel.app/cover.jpg',
+})
+
 const { $AOS } = useNuxtApp()
 
 onMounted(() => {
