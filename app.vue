@@ -1,9 +1,16 @@
 <script setup>
+useHead({
+  link: [
+    { rel: 'preload', href: '/images/hero.png', as: 'image', media: '(max-resolution: 1dppx)' },
+    { rel: 'preload', href: '/images/hero@2x.png', as: 'image', media: '(min-resolution: 2dppx)' },
+    { rel: 'preload', href: '/fonts/MantouSans-Regular.ttf', as: 'font', type: 'font/ttf' },
+  ],
+})
 useSeoMeta({
   title: '喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路',
   ogTitle: '喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路',
   ogUrl: 'https://thef2e-2023-w1-legislator.vercel.app/',
-  ogImage: 'https://thef2e-2023-w1-legislator.vercel.app/cover.jpg',
+  ogImage: 'https://thef2e-2023-w1-legislator.vercel.app/images/cover.jpg',
 })
 
 const { $AOS } = useNuxtApp()
@@ -90,11 +97,7 @@ onMounted(() => {
           </p>
         </div>
         <div class="max-w-85.75 2xl:max-w-none" data-aos="fade" data-aos-delay="1000">
-          <img
-            src="@/assets/images/hero.png"
-            srcset="@/assets/images/hero.png, @/assets/images/hero@2x.png 2x"
-            alt=""
-          />
+          <img src="/images/hero.png" srcset="/images/hero@2x.png 2x" alt="" />
         </div>
         <!-- only mobile -->
         <ul
@@ -285,7 +288,7 @@ onMounted(() => {
     </section>
 
     <!-- 贊助 & 信箱 -->
-    <section id="other" class="py16 md:py15 2xl:py26 bg-#FDFCFB" data-aos="fade-left">
+    <div id="other" class="py16 md:py15 2xl:py26 bg-#FDFCFB" data-aos="fade-left">
       <div class="container flex flex-col gap-6 md:flex-row">
         <div class="md:(w-0 flex-grow)">
           <aside
@@ -338,7 +341,7 @@ onMounted(() => {
           </aside>
         </div>
       </div>
-    </section>
+    </div>
 
     <div class="py26 text-center" data-aos="zoom-in">
       <p
@@ -394,7 +397,8 @@ onMounted(() => {
 @font-face {
   font-family: 'Mantou Sans';
   font-weight: 400;
-  src: local('Mantou Sans'), url(@/assets/MantouSans-Regular.ttf) format('truetype');
+  src: local('Mantou Sans'), url(/fonts/MantouSans-Regular.ttf) format('truetype');
+  font-display: swap;
 }
 html {
   @apply scroll-smooth;
