@@ -10,6 +10,9 @@ import {
 
 useHead({
   link: [
+    { rel: 'apple-touch-icon', sizes: '76x76', href: '/images/apple-touch-icon.png' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon-32x32.png' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicon-16x16.png' },
     { rel: 'preload', href: '/images/hero.png', as: 'image', media: '(max-resolution: 1dppx)' },
     { rel: 'preload', href: '/images/hero@2x.png', as: 'image', media: '(min-resolution: 2dppx)' },
     { rel: 'preload', href: '/fonts/MantouSans-Regular.ttf', as: 'font', type: 'font/ttf' },
