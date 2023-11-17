@@ -1,4 +1,13 @@
 <script setup>
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  DialogDescription,
+} from '@headlessui/vue'
+
 useHead({
   link: [
     { rel: 'preload', href: '/images/hero.png', as: 'image', media: '(max-resolution: 1dppx)' },
@@ -15,6 +24,8 @@ useSeoMeta({
 
 const { $AOS } = useNuxtApp()
 
+const isOpenModal = ref(false)
+
 onMounted(() => {
   $AOS.init()
 })
@@ -27,7 +38,7 @@ onMounted(() => {
     class="pl4 bg-white/85 py3 md:(sticky top-0 z1 mx-4 flex justify-between items-center px6 py3 rounded-4)"
   >
     <h1 class="text-5 font-700 text-primary flex items-center gap-x2 md:text-6">
-      <Icon name="LogoIcon" class="w8.5 h7 md:(w13 h10.75)" />
+      <Icon name="Logo" class="w8.5 h7 md:(w13 h10.75)" />
       喵立翰 Miao Li-Han
     </h1>
 
@@ -35,23 +46,23 @@ onMounted(() => {
       class="fixed z1 w-full h17 left-0 bottom-0 bg-white/90 flex justify-evenly gap-x2 px2 [&>a]:(flex-grow w0 flex flex-col justify-center items-center gap1 text-xs text-gray-700) 2xl:(static w-auto h-auto bg-transparent gap-x-8 [&>a]:w-auto [&>a]:text-4.5 [&>a]:leading-11 [&_svg]:!hidden)"
     >
       <a href="#advocate">
-        <Icon name="UserIcon" size="24px"></Icon>
+        <Icon name="User" size="24px"></Icon>
         候選人主張
       </a>
       <a href="#events">
-        <Icon name="EventsIcon" size="24px"></Icon>
+        <Icon name="Events" size="24px"></Icon>
         最新活動
       </a>
       <a href="#policy">
-        <Icon name="PolicyIcon" size="24px"></Icon>
+        <Icon name="Policy" size="24px"></Icon>
         政策議題
       </a>
       <a href="#other">
-        <Icon name="MoneyIcon" size="24px"></Icon>
+        <Icon name="Money" size="24px"></Icon>
         小額捐款
       </a>
       <a href="#other">
-        <Icon name="MailIcon" size="24px"></Icon>
+        <Icon name="Mail" size="24px"></Icon>
         服務信箱
       </a>
     </nav>
@@ -59,13 +70,13 @@ onMounted(() => {
     <!-- only desktop -->
     <ul class="gap-x-4 [&_a]:(block p0.5) hidden md:flex">
       <li>
-        <a href="javascript:;"><Icon name="FBIcon" size="28px" /></a>
+        <a href="javascript:;"><Icon name="FB" size="28px" /></a>
       </li>
       <li>
-        <a href="javascript:;"><Icon name="IGIcon" size="28px" /></a>
+        <a href="javascript:;"><Icon name="IG" size="28px" /></a>
       </li>
       <li>
-        <a href="javascript:;"><Icon name="YTIcon" size="28px" /></a>
+        <a href="javascript:;"><Icon name="YT" size="28px" /></a>
       </li>
     </ul>
   </header>
@@ -104,13 +115,13 @@ onMounted(() => {
           class="flex justify-center gap-x-4 absolute bottom-3 bg-white rounded-3 px10 py2 shadow-[0_1px_4px_0_#0000001A] [&_a]:(block p0.5) md:hidden"
         >
           <li>
-            <a href="javascript:;"><Icon name="FBIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="FB" size="28px" /></a>
           </li>
           <li>
-            <a href="javascript:;"><Icon name="IGIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="IG" size="28px" /></a>
           </li>
           <li>
-            <a href="javascript:;"><Icon name="YTIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="YT" size="28px" /></a>
           </li>
         </ul>
       </div>
@@ -136,8 +147,8 @@ onMounted(() => {
             <div class="py10 px6 2xl:(py16 px10)">
               <h2 class="subtitle text-gradient" data-tag="ADVOCATE">候選人主張</h2>
               <p class="text-gray-700 text-6 font-700 my4 2xl:text-7">
-                我堅信 ! 藉由推動更完善的<strong class="text-#DA7D4A">貓咪福利</strong
-                >和相關政策，更是間接地投資於<strong class="text-#DA7D4A">台灣的未來</strong>。
+                我堅信 ! 藉由推動更完善的<strong class="text-primary">貓咪福利</strong
+                >和相關政策，更是間接地投資於<strong class="text-primary">台灣的未來</strong>。
               </p>
               <p class="text-gray-700 2xl:text-4.5">
                 畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的
@@ -164,15 +175,15 @@ onMounted(() => {
           最新活動
         </h2>
         <div class="flex flex-col gap-y-6 2xl:(flex-row gap-x-6)" data-aos="fade">
-          <div class="2xl:(w0 flex-grow)">
+          <div class="2xl:(w0 flex-grow) cursor-pointer" @click="isOpenModal = true">
             <img
               src="@/assets/images/events_1.png"
               srcset="@/assets/images/events_1@2x.png 2x"
               alt=""
             />
             <div class="mt4">
-              <p class="text-3.5 text-gray-500">2023/12/26</p>
-              <p class="text-5 font-700 text-gray-700 my2">參與台北寵物論壇，爭取貓咪友善環境</p>
+              <time class="text-3.5 text-gray-500">2023/12/26</time>
+              <h3 class="text-5 font-700 text-gray-700 my2">參與台北寵物論壇，爭取貓咪友善環境</h3>
               <p class="text-gray-700">
                 炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
                 VIP 休憩空間。
@@ -189,10 +200,10 @@ onMounted(() => {
                   alt=""
                 />
                 <div>
-                  <p class="text-3.5 text-gray-500">2023/12/24</p>
-                  <p class="font-700 text-gray-700 my2">
+                  <time class="text-3.5 text-gray-500">2023/12/24</time>
+                  <h3 class="font-700 text-gray-700 my2">
                     掃街模式開啟！帶著你的貓耳，來和我一起走！
-                  </p>
+                  </h3>
                   <p class="text-3.5 text-gray-700 2xl:text-base">
                     街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！
                   </p>
@@ -206,8 +217,8 @@ onMounted(() => {
                   alt=""
                 />
                 <div>
-                  <p class="text-3.5 text-gray-500">2023/12/20</p>
-                  <p class="font-700 text-gray-700 my2">收容所模特兒大比拼！</p>
+                  <time class="text-3.5 text-gray-500">2023/12/20</time>
+                  <h3 class="font-700 text-gray-700 my2">收容所模特兒大比拼！</h3>
                   <p class="text-3.5 text-gray-700 2xl:text-base">
                     今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！
                   </p>
@@ -221,8 +232,8 @@ onMounted(() => {
                   alt=""
                 />
                 <div>
-                  <p class="text-3.5 text-gray-500">2023/12/26</p>
-                  <p class="font-700 text-gray-700 my2">參與台北寵物論壇，爭取貓咪友善環境</p>
+                  <time class="text-3.5 text-gray-500">2023/12/26</time>
+                  <h3 class="font-700 text-gray-700 my2">參與台北寵物論壇，爭取貓咪友善環境</h3>
                   <p class="text-3.5 text-gray-700 2xl:text-base">
                     炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！
                   </p>
@@ -234,7 +245,7 @@ onMounted(() => {
               class="inline-flex items-center gap-x-2 mt6 px6 py4 bg-gray-100 text-gray-700 font-700 rounded-full"
             >
               查看更多
-              <Icon name="ArrowForwardIcon" size="20px" />
+              <Icon name="ArrowForward" size="20px" />
             </a>
           </div>
         </div>
@@ -304,7 +315,7 @@ onMounted(() => {
                 class="inline-flex items-center gap-x-2 px6 py4 bg-white text-gray-700 font-700 rounded-full"
               >
                 小額捐款
-                <Icon name="ArrowForwardIcon" size="20px" />
+                <Icon name="ArrowForward" size="20px" />
               </a>
               <img
                 src="@/assets/images/donate.png"
@@ -329,7 +340,7 @@ onMounted(() => {
                 class="inline-flex items-center gap-x-2 px6 py4 bg-white text-gray-700 font-700 rounded-full"
               >
                 填寫表單
-                <Icon name="ArrowForwardIcon" size="20px" />
+                <Icon name="ArrowForward" size="20px" />
               </a>
               <img
                 src="@/assets/images/mail.png"
@@ -370,13 +381,13 @@ onMounted(() => {
         </p>
         <ul class="flex gap-x-2 my4 [&_a]:(block p2.5 bg-white rounded-full)">
           <li>
-            <a href="javascript:;"><Icon name="FBIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="FB" size="28px" /></a>
           </li>
           <li>
-            <a href="javascript:;"><Icon name="IGIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="IG" size="28px" /></a>
           </li>
           <li>
-            <a href="javascript:;"><Icon name="YTIcon" size="28px" /></a>
+            <a href="javascript:;"><Icon name="YT" size="28px" /></a>
           </li>
         </ul>
         <p class="text-3.5">© 2023 喵立翰 Miao Li-Han 版權所有</p>
@@ -391,6 +402,128 @@ onMounted(() => {
       </div>
     </div>
   </footer>
+
+  <Teleport to="body">
+    <ClientOnly>
+      <TransitionRoot appear :show="isOpenModal" as="template">
+        <Dialog as="div" @close="isOpenModal = false" class="relative z-10">
+          <TransitionChild
+            as="template"
+            enter="duration-300 ease-out"
+            enter-from="opacity-0"
+            enter-to="opacity-100"
+            leave="duration-200 ease-in"
+            leave-from="opacity-100"
+            leave-to="opacity-0"
+          >
+            <div class="fixed inset-0 bg-black/25" />
+          </TransitionChild>
+
+          <div class="fixed inset-0 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4">
+              <TransitionChild
+                as="template"
+                enter="duration-300 ease-out"
+                enter-from="opacity-0 scale-95"
+                enter-to="opacity-100 scale-100"
+                leave="duration-200 ease-in"
+                leave-from="opacity-100 scale-100"
+                leave-to="opacity-0 scale-95"
+              >
+                <DialogPanel
+                  class="max-w350 transform overflow-hidden rounded-6 bg-white p-4 transition-all flex flex-col gap-8 md:(flex-row px12 py6)"
+                >
+                  <div class="md:w4/10">
+                    <DialogTitle as="h2" class="text-6 font-700 text-gray-700 mb4"
+                      >最新活動</DialogTitle
+                    >
+                    <img
+                      src="@/assets/images/events_1.png"
+                      srcset="@/assets/images/events_1@2x.png 2x"
+                      class="rounded-6 w-full"
+                      alt=""
+                    />
+                    <DialogDescription class="text-gray-700 mt4 mb2 md:text-3.5">
+                      參與台北寵物論壇，爭取貓咪友善環境
+                    </DialogDescription>
+                    <div>
+                      <span class="mr4">分享</span>
+                      <ul class="inline-flex items-center gap-x-4">
+                        <li>
+                          <a href="javascript:;" class="outline-0">
+                            <Icon name="FB" size="28px" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:;" class="outline-0">
+                            <Icon name="IG" size="28px" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:;" class="outline-0">
+                            <Icon name="Line" size="28px" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:;" class="outline-0">
+                            <Icon name="X" size="32px" />
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <article class="md:(w6/10 pt13)">
+                    <h1 class="text-primary text-6 font-700 md:text-8">
+                      參與台北寵物論壇，爭取貓咪友善環境
+                    </h1>
+                    <time class="mt2 text-gray-500 text-3.5">2023/12/24</time>
+                    <p class="text-primary-700 mt10 mb24">
+                      炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
+                      VIP 休憩空間。
+                    </p>
+                    <aside class="p4 bg-gray-50 rounded-3">
+                      <h2 class="text-gray-700 font-600">更多活動</h2>
+                      <div class="grid gap4 grid-cols-2 2xl:grid-cols-[244px_244px] mt4">
+                        <fieldset>
+                          <img
+                            src="@/assets/images/events_2_thumb.png"
+                            srcset="@/assets/images/events_2_thumb@2x.png 2x"
+                            class="w-full object-cover rounded-2"
+                            alt=""
+                          />
+                          <figcaption class="text-gray-700 mt3">
+                            掃街模式開啟！帶著你的貓耳，來和我一起走！
+                          </figcaption>
+                        </fieldset>
+                        <fieldset>
+                          <img
+                            src="@/assets/images/events_3_thumb.png"
+                            srcset="@/assets/images/events_3_thumb@2x.png 2x"
+                            class="w-full object-cover rounded-2"
+                            alt=""
+                          />
+                          <figcaption class="text-gray-700 mt3">收容所模特兒大比拼！</figcaption>
+                        </fieldset>
+                      </div>
+                    </aside>
+                  </article>
+
+                  <button
+                    type="button"
+                    class="absolute top-0 right-0 w13 h17 outline-0 md:(top-3 right-8)"
+                    @click="isOpenModal = false"
+                  >
+                    <Icon name="Cancel" class="w5 h5 md:(w8 h8)" />
+                  </button>
+                </DialogPanel>
+              </TransitionChild>
+            </div>
+          </div>
+        </Dialog>
+      </TransitionRoot>
+    </ClientOnly>
+  </Teleport>
 </template>
 
 <style>
