@@ -10,7 +10,7 @@ export default defineConfig({
     presetUno(),
     presetWebFonts({
       provider: 'google',
-      fonts: { sans: 'Inter' },
+      fonts: { sans: 'Inter:400,700' },
     }),
   ],
   theme: {
